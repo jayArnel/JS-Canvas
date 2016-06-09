@@ -49,9 +49,17 @@ $(document).ready(function (){
             ctx.strokeRect(r.x,r.y,r.width,r.height);
         }
     }
-    draw();
 
-     
+    function move(time){
+        for(var i=0;i<snake.length;i++){
+            snake[i].x += snake[i].directionX;
+            snake[i].y += snake[i].directionY;
+        }
+
+        draw();
+
+        requestAnimationFrame(move);
+    }
 
 
 });
